@@ -56,11 +56,11 @@ class CtypesBuilder(object):
             return self.lazy_buildlib(*args, **kwargs)
         return self.buildlib(*args, **kwargs)
 
-    def buildlib(self, libfile, sources, depdirs = (), include_paths = (),
+    def buildlib(self, libfile, sources=(), depdirs = (), include_paths = (),
                      define_symbols = (), undefine_symbols = (), extra_opts = (),
                      working_dir = None, export_dirs = (), cmd=(), force_rebuild=False, extra_mappers=()):
         if working_dir is None:
-            raise Exception("TODO: Automatically infer working_dir.")
+            raise Exception("Must specify working_dir.")
         if isinstance(sources, basestring):
             sources = [sources]
         if not export_dirs and working_dir:
