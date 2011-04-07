@@ -127,7 +127,7 @@ class CtypesBuilder(object):
         key = `[libfile, command, depdirs]`
         cmdstr, deps, outputs = self.builder.run(command)
         rebuilt = (deps is not None) or (outputs is not None)
-        return self.loadlib(key, libfile, force_rebuild = rebuilt)
+        return self.loadlib(key, libfile, force_retype = rebuilt)
            
     def xmlname(self, libfile):
         return libfile + '.typeinfo.pickle'
